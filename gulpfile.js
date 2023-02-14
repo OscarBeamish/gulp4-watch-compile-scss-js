@@ -4,8 +4,6 @@ const { src, dest, watch, series, parallel } = require('gulp'),
   sass = require('gulp-sass')(require('sass')),
   clean = require('gulp-clean');
 
-
-
 // File paths
 const files = {
 	scssSrc: 'assets/scss/styles.scss',
@@ -59,5 +57,4 @@ function watchTask() {
 	)
 }
 
-
-exports.default = series(scssClean, jsClean, parallel(scssTask, jsTask), watchTask);
+exports.default = series(scssClean, jsClean, parallel(scssTask, jsTask), watchTask)
