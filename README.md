@@ -1,4 +1,4 @@
-# Front-end Boilerplate using Sass and Gulp 4
+# Front-end Gulp template using Sass and Gulp 4
 
 Gulp template for simple front-end websites that use HTML, SCSS, and JavaScript. 
 I'm using Gulp 4 to compile, prefix, and minify my files.
