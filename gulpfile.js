@@ -11,7 +11,7 @@ const files = {
   scssDest: 'public/build/css/styles.css',
 
 	jsSrc: 'assets/js/scripts.js',
-  jsWatch: 'assets/js/**/*.js',
+  jsWatch: 'assets/js/scripts.js',
 	jsDest: 'public/build/js/scripts.min.js',
 }
 
@@ -53,8 +53,8 @@ function jsTask() {
 function watchTask() {
 	watch(
 		[files.scssWatch, files.jsWatch],
-		series(scssClean, jsClean, parallel(scssTask, jsTask))
+		series(parallel(scssClean, jsClean), parallel(scssTask, jsTask))
 	)
 }
 
-exports.default = series(scssClean, jsClean, parallel(scssTask, jsTask), watchTask)
+exports.default = series(parallel(scssClean, jsClean), watchTask)
